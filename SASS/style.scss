@@ -73,11 +73,6 @@ $colorTertiare:#99e2d0;
     font-size: 18px;
     font-weight: 300;
     }
-    .button-general--cta{   /***bouton général +cta ***/
-     
-    width: 60%;
-    height: 50px;
-    }
 
 }
 .fonctionnement{  
@@ -141,6 +136,7 @@ $colorTertiare:#99e2d0;
   }
 
   &__text {
+    font-size: 16px;
     font-weight: 500;
   }
 
