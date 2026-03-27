@@ -1,11 +1,12 @@
 @charset "UTF-8";
+/***variable***/
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
 }
 
-/***variable***/
-.button-general { /***bouton général****/
+.button-general {
+  /***bouton général****/
   font-size: 16px;
   font-weight: 500;
   box-shadow: 0 2px 4px 3px rgba(0, 0, 0, 0.3);
@@ -19,26 +20,31 @@ body {
   font-weight: 500;
   margin-bottom: 50px;
   margin-top: 20px;
+  padding: 13px 18px;
 }
 
-.header { /***mon bloc***/
+.header {
+  /***mon bloc***/
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.header__logo { /***mon élément***/
+.header__logo {
+  /***mon élément***/
   width: 197px;
   height: 36px;
   padding-top: 20px;
 }
 
-.location { /***mon bloc***/
+.location {
+  /***mon bloc***/
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 15px;
 }
-.location__btn-location { /***mon élément***/
+.location__btn-location {
+  /***mon élément***/
   border: none;
   width: 100%;
   height: 50px;
@@ -52,32 +58,31 @@ body {
 }
 
 .hero {
-  background-color: #f6f6f6; /**mon bloc**/
+  background-color: #f6f6f6;
+  /**mon bloc**/
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.hero__title { /***mon élément***/
+.hero__title {
+  /***mon élément***/
   margin: 0;
   padding-top: 50px;
   font-size: 24px;
   font-weight: 700;
   text-align: center;
 }
-.hero__description { /***mon élément***/
+.hero__description {
+  /***mon élément***/
   text-align: center;
   font-size: 18px;
   font-weight: 300;
-}
-.hero .button-general--cta { /***bouton général +cta ***/
-  width: 60%;
-  height: 50px;
 }
 
 .fonctionnement {
   padding: 40px 25px;
 }
-.fonctionnement__title {
+.fonctionnement _title {
   margin-bottom: 25px;
   font-size: 24px;
   font-weight: bold;
@@ -119,5 +124,45 @@ body {
   margin-left: 20px;
 }
 .fonctionnement__text {
+  font-size: 16px;
   font-weight: 500;
+}
+
+.restaurants {
+  background-color: #f6f6f6;
+  padding: 20px;
+}
+.restaurants__title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.restaurants__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.card__img {
+  width: 100%;
+  height: 180px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card__content {
+  padding: 15px;
+}
+.card__subtitle {
+  font-size: 18px;
+  margin: 0;
+}
+.card__location {
+  font-size: 14px;
+  margin-top: 2px;
+  font-weight: 300;
 }/*# sourceMappingURL=style.css.map */
