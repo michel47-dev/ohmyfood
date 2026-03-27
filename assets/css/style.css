@@ -130,7 +130,7 @@ body {
 
 .restaurants {
   background-color: #f6f6f6;
-  padding: 20px;
+  padding: 15px;
 }
 .restaurants__title {
   font-size: 24px;
@@ -155,7 +155,7 @@ body {
      object-fit: cover;
 }
 .card__content {
-  padding: 15px;
+  padding: 5px;
 }
 .card__subtitle {
   font-size: 18px;
@@ -165,4 +165,38 @@ body {
   font-size: 14px;
   margin-top: 2px;
   font-weight: 300;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #353535;
+}
+.footer__logo {
+  font-family: "Shrikhand", serif;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 0;
+}
+.footer__list {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-left: 20px;
+}
+.footer__items {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 10px;
+}
+.footer__icon {
+  display: flex;
+  width: 11px;
 }/*# sourceMappingURL=style.css.map */
