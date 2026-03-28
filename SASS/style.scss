@@ -42,7 +42,7 @@ body {
 .header {
   /***mon bloc***/
   display: flex;
-  justify-content: center;
+  justify-content: center;                 /*1*/
   align-items: center;
 
   &__logo {
@@ -56,7 +56,7 @@ body {
 .location {
   /***mon bloc***/
   display: flex;
-  justify-content: center;
+  justify-content: center;                       /*2*/
   align-items: center;
   padding-top: 15px;
 
@@ -148,7 +148,7 @@ body {
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;          /*3*/
 
     font-size: 14px;
   }
