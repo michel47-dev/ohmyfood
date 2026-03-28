@@ -1,26 +1,37 @@
 @charset "UTF-8";
 /***variable***/
 body {
-  margin: 0;
+  margin: auto;
   font-family: "Roboto", sans-serif;
+  max-width: 1440px;
 }
 
-.button-general {
+.button {
   /***bouton général****/
   font-size: 16px;
-  font-weight: 500;
-  box-shadow: 0 2px 4px 3px rgba(0, 0, 0, 0.3);
-}
-.button-general--cta {
-  background: linear-gradient(#ff79da, #9356dc);
-  color: white;
+  font-weight: 300;
+  padding: 10px 15px;
   border-radius: 25px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  color: white;
   border: none;
-  font-size: 16px;
-  font-weight: 500;
+}
+
+.button--cta {
+  background: linear-gradient(#ff79da, #9356dc);
+  box-shadow: 0 2px 4px 3px rgba(0, 0, 0, 0.1);
   margin-bottom: 50px;
-  margin-top: 20px;
-  padding: 13px 18px;
+  margin-top: 15px;
+}
+
+.button--cta:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .header {
@@ -49,7 +60,7 @@ body {
   width: 100%;
   height: 50px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 300;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   background-color: #eaeaea;
 }
@@ -82,10 +93,10 @@ body {
 .fonctionnement {
   padding: 40px 25px;
 }
-.fonctionnement _title {
+.fonctionnement__title {
   margin-bottom: 25px;
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 700;
 }
 .fonctionnement__list {
   list-style: none;
@@ -134,6 +145,7 @@ body {
 }
 .restaurants__title {
   font-size: 24px;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 .restaurants__cards {
@@ -159,6 +171,7 @@ body {
 }
 .card__subtitle {
   font-size: 18px;
+  font-weight: 700;
   margin: 0;
 }
 .card__location {

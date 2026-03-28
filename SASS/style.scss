@@ -1,30 +1,42 @@
 @import "variables";
+@import "mixins";
 
 body {
-  margin: 0;
+  margin: auto;
   font-family: "Roboto", sans-serif;
+  max-width: 1440px;
 }
 
 
 
 
-.button-general {
+.button {
   /***bouton général****/
-  font-size: 16px;
-  font-weight: 500;
-  box-shadow: 0 2px 4px 3px rgba(0, 0, 0, 0.3);
+  @include font($text-size, $weight-light);
+  padding: 10px 15px;
+  border-radius: 25px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  color: white;
+  border: none;
 
-  &--cta {
-    background: linear-gradient($colorSecondaire, $colorPrimaire);
-    color: white;
-    border-radius: 25px;
-    border: none;
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 50px;
-    margin-top: 20px;
-    padding: 13px 18px;
-  }
+}
+
+.button--cta {
+  background: linear-gradient($colorSecondaire, $colorPrimaire);
+
+  box-shadow: 0 2px 4px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+  margin-top: 15px;
+}
+
+.button--cta:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .header {
@@ -53,8 +65,7 @@ body {
     border: none;
     width: 100%;
     height: 50px;
-    font-size: 16px;
-    font-weight: 500;
+    @include font($text-size, $weight-light);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     background-color: #eaeaea;
   }
@@ -73,20 +84,19 @@ body {
   flex-direction: column;
   align-items: center;
 
+
   &__title {
     /***mon élément***/
     margin: 0;
     padding-top: 50px;
-    font-size: 24px;
-    font-weight: 700;
+    @include font($titre-size, $weight-bold);
     text-align: center;
   }
 
   &__description {
     /***mon élément***/
     text-align: center;
-    font-size: 18px;
-    font-weight: 300;
+    @include font($text-large, $weight-light)
   }
 
 }
@@ -94,10 +104,9 @@ body {
 .fonctionnement {
   padding: 40px 25px;
 
-  & _title {
+  &__title {
     margin-bottom: 25px;
-    font-size: 24px;
-    font-weight: bold;
+    @include font($titre-size, $weight-bold);
   }
 
   &__list {
@@ -152,93 +161,94 @@ body {
   }
 
   &__text {
-    font-size: 16px;
-    font-weight: 500;
+    @include font($text-size, $weight-medium);
   }
 
 
 }
-.restaurants{
-background-color: #f6f6f6;
-padding: 15px;
 
-&__title{
-  font-size: 24px;
-  margin-bottom: 20px;
+.restaurants {
+  background-color: #f6f6f6;
+  padding: 15px;
+
+  &__title {
+    @include font($titre-size, $weight-bold);
+    margin-bottom: 20px;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
-&__cards{
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-}
-.card{
+.card {
   background-color: white;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
-  &__img{
+  &__img {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    
+
 
   }
 
-  &__content{
+  &__content {
     padding: 5px;
 
   }
-  
-  &__subtitle{
-    font-size: 18px;
+
+  &__subtitle {
+    @include font ($h3-size, $weight-bold);
     margin: 0;
   }
 
-  &__location{
+  &__location {
     font-size: 14px;
     margin-top: 2px;
     font-weight: 300;
-    
-    
+
+
   }
 
 }
-.footer{
+
+.footer {
   display: flex;
   flex-direction: column;
-  background-color:#353535;
+  background-color: #353535;
 
-  &__logo{
-     font-family: "Shrikhand", serif;
-     color: white;
-     font-size: 18px;
-     font-weight: 400;
-     margin-top: 20px;
-     margin-left: 20px;
-     margin-bottom: 0;
+  &__logo {
+    font-family: "Shrikhand", serif;
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 0;
   }
 
-  &__list{
-    color:white;
-    font-size: 16px;
-    font-weight: 500;
+  &__list {
+    color: white;
+    @include font ($text-size, $weight-medium);
     display: flex;
     flex-direction: column;
     list-style: none;
-    padding-left: 20px;  
+    padding-left: 20px;
   }
 
-  &__items{
-   display: flex;
-   align-items: center;
-   gap: 20px;
-   padding-bottom: 10px;
+  &__items {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 10px;
   }
 
-  &__icon{
+  &__icon {
     display: flex;
     width: 11px;
   }
