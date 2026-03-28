@@ -1,0 +1,28 @@
+.button {
+  /***bouton général****/
+  @include font($text-size, $weight-light);
+  padding: 10px 15px;
+  border-radius: 25px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  color: white;
+  border: none;
+
+}
+
+.button--cta {
+  background: linear-gradient($colorSecondaire, $colorPrimaire);
+
+  box-shadow: 0 2px 4px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+  margin-top: 15px;
+}
+
+.button--cta:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}

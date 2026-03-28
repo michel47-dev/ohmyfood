@@ -1,0 +1,11 @@
+.header {
+  /***mon bloc***/
+  @include flex-center;
+
+  &__logo {
+    /***mon élément***/
+    width: 197px;
+    height: 36px;
+    padding-top: 20px;
+  }
+}

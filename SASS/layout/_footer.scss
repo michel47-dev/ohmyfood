@@ -1,0 +1,35 @@
+
+.footer {
+  @include flex-column;
+  background-color: #353535;
+
+  &__logo {
+    font-family: "Shrikhand", serif;
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 0;
+  }
+
+  &__list {
+    color: white;
+    @include font ($text-size, $weight-medium);
+   @include flex-column;
+    list-style: none;
+    padding-left: 20px;
+  }
+
+  &__items {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 10px;
+  }
+
+  &__icon {
+    display: flex;
+    width: 11px;
+  }
+}
