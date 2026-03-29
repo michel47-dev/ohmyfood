@@ -39,6 +39,7 @@ body {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 .card__img {
   width: 100%;
@@ -58,6 +59,21 @@ body {
   font-size: 14px;
   margin-top: 2px;
   font-weight: 300;
+}
+.card__like {
+  position: absolute;
+  right: 60px;
+  bottom: 25px;
+  height: 25px;
+}
+.card__heart {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 0.8;
+  position: absolute;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: visible;
 }
 
 .header {
