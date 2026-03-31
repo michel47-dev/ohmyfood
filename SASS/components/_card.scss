@@ -1,5 +1,5 @@
 .card {
-  background-color: white;
+  background-color: $colorWhite;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -24,32 +24,57 @@
   }
 
   &__location {
-    font-size: 14px;
+    @include font ($text-size-s, $weight-medium-s);
     margin-top: 2px;
-    font-weight: 300;
-
 
   }
-  &__like{
+
+  &__etiquette {
     position: absolute;
-   right: 60px;
+    top: 15px;
+    right: 15px;
+    background-color: $colorTertiaire;
+    color: $coloretiquette;
+    border-radius: 2px;
+    padding: 5px 10px;
+   @include font ($text-size-s, $weight-medium);
+  }
+
+  &__like {                                      /**animation du coeur**/
+    position: absolute;
+    right: 50px;
     bottom: 25px;
     height: 25px;
-   
+    cursor: pointer;
+
+    .card__checkbox {
+      display: none;
     }
-  
-&__heart{
-  fill: transparent;
-  stroke: black;
-  stroke-width: 0.8;
-  position: absolute;
-   cursor: pointer;
-    transition: all 0.3s ease;
-    overflow:visible;
-    
-    
+
+    .card__heart,
+    .card__heart--empty {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .card__heart--empty {
+      fill: transparent;
+      stroke: $colorBlack;
+    }
+
+    .card__heart {
+      clip-path: inset(100% 0 0 0); // caché en bas
+      transition: clip-path 0.7s ease;
+      
+    }
+
+    .card__checkbox:checked~.card__heart {
+      clip-path: inset(0 0 0 0); // rempli entièrement
+    }
+
+    .card__checkbox:checked~.card__heart--empty {
+      opacity: 0;
+    }
   }
-
-
-  
 }

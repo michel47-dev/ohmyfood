@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/***variable***/
 body {
   margin: auto;
   font-family: "Roboto", sans-serif;
@@ -17,7 +16,7 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-block;
-  color: white;
+  color: #ffffff;
   border: none;
 }
 
@@ -29,13 +28,13 @@ body {
 }
 
 .button--cta:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
   opacity: 0.9;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .card {
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -57,23 +56,49 @@ body {
 }
 .card__location {
   font-size: 14px;
+  font-weight: 400;
   margin-top: 2px;
-  font-weight: 300;
 }
-.card__like {
+.card__etiquette {
   position: absolute;
-  right: 60px;
+  top: 15px;
+  right: 15px;
+  background-color: #99e2d0;
+  color: #008766;
+  border-radius: 2px;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.card__like { /**animation du coeur**/
+  position: absolute;
+  right: 50px;
   bottom: 25px;
   height: 25px;
-}
-.card__heart {
-  fill: transparent;
-  stroke: black;
-  stroke-width: 0.8;
-  position: absolute;
   cursor: pointer;
-  transition: all 0.3s ease;
-  overflow: visible;
+}
+.card__like .card__checkbox {
+  display: none;
+}
+.card__like .card__heart,
+.card__like .card__heart--empty {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.card__like .card__heart--empty {
+  fill: transparent;
+  stroke: #000000;
+}
+.card__like .card__heart {
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path 0.7s ease;
+}
+.card__like .card__checkbox:checked ~ .card__heart {
+  clip-path: inset(0 0 0 0);
+}
+.card__like .card__checkbox:checked ~ .card__heart--empty {
+  opacity: 0;
 }
 
 .header {
@@ -96,17 +121,17 @@ body {
 }
 .footer__logo {
   font-family: "Shrikhand", serif;
-  color: white;
+  color: #ffffff;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 700;
   margin-top: 20px;
   margin-left: 20px;
   margin-bottom: 0;
 }
 .footer__list {
-  color: white;
+  color: #ffffff;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -198,7 +223,7 @@ body {
   width: 20px;
   height: 20px;
   background: #9356dc;
-  color: white;
+  color: #ffffff;
   border-radius: 50%;
   display: flex;
   align-items: center;

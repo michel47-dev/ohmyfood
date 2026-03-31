@@ -8,7 +8,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-block;
-  color: white;
+  color: $colorWhite;
   border: none;
 
 }
@@ -22,7 +22,7 @@
 }
 
 .button--cta:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
   opacity: 0.9;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
