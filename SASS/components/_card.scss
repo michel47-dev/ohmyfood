@@ -14,7 +14,7 @@
   }
 
   &__content {
-    padding: 5px;
+    padding: 15px;
 
   }
 
@@ -64,17 +64,19 @@
     }
 
     .card__heart {
-      clip-path: inset(100% 0 0 0); // caché en bas
-      transition: clip-path 0.7s ease;
+      clip-path: inset(100% 0 0 0);                  /**masque completement le coeur(cacher en haut) ***/
+      transition: clip-path 0.7s ease;               /***animation du coeur qui se remplit progressivement***/
       
     }
 
     .card__checkbox:checked~.card__heart {
-      clip-path: inset(0 0 0 0); // rempli entièrement
+      clip-path: inset(0 0 0 0);                 /***affiche le coeur rempli en entier***/
+       transition: clip-path 0.7s ease 0.1s;        /***animation du coeur qui se remplit progressivement***/
     }
 
-    .card__checkbox:checked~.card__heart--empty {
-      opacity: 0;
+    .card__checkbox:checked~.card__heart--empty {         
+      opacity: 0;                                                     /***rend le cœur vide invisible après le clic***/
+       transition: opacity 0.2s ease 0.2s;                              /***animation de disparition du coeur vide après le clic***/
     }
   }
 }

@@ -47,7 +47,7 @@ body {
      object-fit: cover;
 }
 .card__content {
-  padding: 5px;
+  padding: 15px;
 }
 .card__subtitle {
   font-size: 18px;
@@ -91,14 +91,16 @@ body {
   stroke: #000000;
 }
 .card__like .card__heart {
-  clip-path: inset(100% 0 0 0);
-  transition: clip-path 0.7s ease;
+  clip-path: inset(100% 0 0 0); /**masque completement le coeur(cacher en haut) ***/
+  transition: clip-path 0.7s ease; /***animation du coeur qui se remplit progressivement***/
 }
 .card__like .card__checkbox:checked ~ .card__heart {
-  clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0); /***affiche le coeur rempli en entier***/
+  transition: clip-path 0.7s ease 0.1s; /***animation du coeur qui se remplit progressivement***/
 }
 .card__like .card__checkbox:checked ~ .card__heart--empty {
-  opacity: 0;
+  opacity: 0; /***rend le cœur vide invisible après le clic***/
+  transition: opacity 0.2s ease 0.2s; /***animation de disparition du coeur vide après le clic***/
 }
 
 .header {
@@ -227,7 +229,7 @@ body {
   border-radius: 50%;
   display: flex;
   align-items: center;
-  justify-content: center; /*3*/
+  justify-content: center;
   font-size: 14px;
 }
 .fonctionnement__icon {
@@ -253,4 +255,57 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+@media (min-width: 1024px) {
+  .fonctionnement {
+    margin: 0 auto;
+  }
+  .fonctionnement__title {
+    margin-left: 150px;
+  }
+  .fonctionnement__list {
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+  }
+  .fonctionnement__item {
+    width: calc((70% - 40px) / 3);
+  }
+  .restaurants {
+    margin: 0 auto;
+  }
+  .restaurants__title {
+    margin-left: 160px;
+  }
+  .restaurants__cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 50px;
+    -moz-column-gap: 100px;
+         column-gap: 100px;
+    justify-content: center;
+  }
+  .restaurants .card {
+    width: calc((72% - 30px) / 2);
+  }
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 50px;
+    padding: 1px 80px;
+    padding-top: 50px;
+  }
+  .footer__logo {
+    margin-top: -10px;
+    order: 2;
+  }
+  .footer__list {
+    order: 1;
+    flex-direction: row;
+    gap: 15px;
+  }
 }/*# sourceMappingURL=style.css.map */
