@@ -37,9 +37,10 @@ margin: 0 auto;
     justify-content: center;
     
   }
-.card{
-    width: calc((72% - 30px)/2);
+
 }
+.card-link {
+    width: calc((77% - 100px) / 2)
 }
 .footer{
     display: flex;

@@ -10,6 +10,7 @@
   display: inline-block;
   color: $colorWhite;
   border: none;
+  
 
 }
 
@@ -20,7 +21,10 @@
   margin-bottom: 50px;
   margin-top: 15px;
 }
-
+.button--large{
+  width: 60%;
+  
+}
 .button--cta:hover {
   transform: scale(1.01);
   opacity: 0.9;

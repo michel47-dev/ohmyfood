@@ -27,6 +27,10 @@ body {
   margin-top: 15px;
 }
 
+.button--large {
+  width: 60%;
+}
+
 .button--cta:hover {
   transform: scale(1.01);
   opacity: 0.9;
@@ -88,7 +92,7 @@ body {
 }
 .card__like .card__heart--empty {
   fill: transparent;
-  stroke: #000000;
+  stroke: #101010;
 }
 .card__like .card__heart {
   clip-path: inset(100% 0 0 0); /**masque completement le coeur(cacher en haut) ***/
@@ -101,6 +105,11 @@ body {
 .card__like .card__checkbox:checked ~ .card__heart--empty {
   opacity: 0; /***rend le cœur vide invisible après le clic***/
   transition: opacity 0.2s ease 0.2s; /***animation de disparition du coeur vide après le clic***/
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
 }
 
 .header {
@@ -233,7 +242,7 @@ body {
   font-size: 14px;
 }
 .fonctionnement__icon {
-  color: grey;
+  color: #808080;
   font-size: 18px;
   margin-left: 20px;
 }
@@ -287,8 +296,8 @@ body {
          column-gap: 100px;
     justify-content: center;
   }
-  .restaurants .card {
-    width: calc((72% - 30px) / 2);
+  .card-link {
+    width: calc((77% - 100px) / 2);
   }
   .footer {
     display: flex;
@@ -308,4 +317,130 @@ body {
     flex-direction: row;
     gap: 15px;
   }
+}
+.menu__img {
+  width: 100%;
+  height: 275px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.menu__content {
+  background: #f6f6f6;
+  border-radius: 40px 40px 0 0;
+  margin-top: -40px;
+  padding: 30px 20px;
+  position: relative;
+  z-index: 1;
+}
+.menu__title-texte {
+  font-family: "Shrikhand", serif;
+  font-size: 28px;
+  font-weight: 400;
+  margin: 0;
+  color: #101010;
+}
+.menu__section {
+  margin-top: 15px;
+}
+.menu__section-title {
+  font-size: 16px;
+  font-weight: 300;
+  position: relative;
+  display: inline-block;
+}
+.menu__section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 40px;
+  height: 3px;
+  background-color: #99e2d0;
+}
+.menu__item-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  transition: margin-right 0.3s ease;
+  min-width: 0;
+}
+.menu__item {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 15px;
+  margin-top: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 12px;
+}
+.menu__item-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu__text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+.menu__item-desc {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 300;
+  padding-top: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu__price {
+  font-weight: bold;
+  margin-left: 10px;
+  margin-top: 25px;
+  transition: margin-right 0.3s ease;
+}
+.menu__check {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #99e2d0;
+  width: 60px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+.menu__check i {
+  background: white;
+  color: #99e2d0;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+.menu__item:hover .menu__item-content {
+  margin-right: 60px;
+}
+.menu__item:hover .menu__check {
+  transform: translateX(0);
+}
+.menu__button {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }/*# sourceMappingURL=style.css.map */

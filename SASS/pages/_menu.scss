@@ -1,0 +1,139 @@
+.menu {
+    &__img {
+        width: 100%;
+        height: 275px;
+        object-fit: cover;
+        display: block;
+    }
+
+    &__content {
+        background: $colorGreyBg;
+        border-radius: 40px 40px 0 0;
+        margin-top: -40px;
+        padding: 30px 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__title-texte {
+        font-family: "Shrikhand", serif;
+        @include font ($titre-size-large, $weight-medium-s);
+        margin: 0;
+        color: $colorBlack;
+    }
+    &__section {
+        margin-top: 15px;
+        
+    }
+    &__section-title {
+        @include font ($text-size, $weight-light);
+        position: relative;
+        display: inline-block;
+        }
+        &__section-title::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+            width: 40px;
+            height: 3px;
+            background-color: $colorTertiaire;
+        }
+    
+    &__item-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        transition: margin-right 0.3s ease;
+        min-width: 0;
+    }
+    &__item {
+        display: flex;
+        position: relative;
+       justify-content: space-between;
+        background: $colorWhite;
+        border-radius: 15px;
+       
+        overflow: hidden;
+        cursor: pointer;
+        padding: 15px;
+        margin-top: 5px;
+         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+         margin-bottom: 12px;
+    }
+
+    &__item-title {
+    margin: 0;
+    @include font ($text-large, $weight-medium);
+     white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  }
+&__text{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    
+}
+  &__item-desc {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 300;
+    padding-top: 5px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+&__price {
+ font-weight: bold;
+ margin-left: 10px;
+ margin-top: 25px;
+transition: margin-right 0.3s ease;
+}
+
+&__check {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: $colorTertiaire;
+    width: 60px;
+   color:$colorWhite; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    
+}
+&__check i {
+    background: white;
+    color: $colorTertiaire;
+
+    border-radius: 50%;
+
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 16px;
+  }
+
+&__item:hover &__item-content {
+    margin-right: 60px;
+}
+&__item:hover &__check {
+    transform: translateX(0);
+}
+&__button{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+}
