@@ -1,10 +1,69 @@
+.header {
+    position: relative;
+    
+   @include flex-center;
+
+    &__back i {
+        position: absolute;
+        left: 20px;
+        bottom: 15px;
+        font-size: 20px;
+        color: $colorBlack;
+       
+    }
+}
+
 .menu {
+    position: relative;
+
     &__img {
         width: 100%;
         height: 275px;
         object-fit: cover;
         display: block;
     }
+
+    &__like {
+        position: absolute;
+        right: 40px;
+        top: 40px;
+        width: 22px;
+        height: 21px;
+
+        cursor: pointer;
+    }
+
+    .menu__heart,
+    .menu__heart--empty {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    /* coeur vide visible */
+    .menu__heart--empty {
+        fill: none;
+        stroke: black;
+        stroke-width: 1px;
+    }
+
+    /* coeur rempli caché */
+    .menu__heart {
+        clip-path: inset(100% 0 0 0);
+        transition: clip-path 0.5s ease;
+    }
+
+    /*  HOVER */
+    .menu__like:hover .menu__heart {
+        clip-path: inset(0 0 0 0);
+    }
+
+    .menu__like:hover .menu__heart--empty {
+        opacity: 0;
+    }
+
+
+
 
     &__content {
         background: $colorGreyBg;
@@ -20,120 +79,135 @@
         @include font ($titre-size-large, $weight-medium-s);
         margin: 0;
         color: $colorBlack;
+
     }
+
+
     &__section {
         margin-top: 15px;
-        
+
     }
+
     &__section-title {
         @include font ($text-size, $weight-light);
         position: relative;
         display: inline-block;
-        }
-        &__section-title::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -7px;
-            width: 40px;
-            height: 3px;
-            background-color: $colorTertiaire;
-        }
-    
+    }
+
+
+    &__section-title::after {
+          /***ligne sous le titre***/
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -7px;
+        width: 40px;
+        height: 3px;
+        background-color: $colorTertiaire;
+    }
+
     &__item-content {
-        display: flex;
+        display: flex;         
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        transition: margin-right 0.3s ease;
+        transition: margin-right 0.3s ease;                            /* transition pour le déplacement du prix */
         min-width: 0;
     }
+
     &__item {
         display: flex;
         position: relative;
-       justify-content: space-between;
+        justify-content: space-between;
         background: $colorWhite;
         border-radius: 15px;
-       
+
         overflow: hidden;
         cursor: pointer;
         padding: 15px;
         margin-top: 5px;
-         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-         margin-bottom: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 12px;
     }
 
     &__item-title {
-    margin: 0;
-    @include font ($text-large, $weight-medium);
-     white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  }
-&__text{
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    min-width: 0;
-    
-}
-  &__item-desc {
-    margin: 0;
-    font-size: 15px;
-    font-weight: 300;
-    padding-top: 5px;
+        margin: 0;
+        @include font ($text-large, $weight-medium);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-&__price {
- font-weight: bold;
- margin-left: 10px;
- margin-top: 25px;
-transition: margin-right 0.3s ease;
-}
+    &__text {
+       @include flex-column;
+        flex: 1;
+        min-width: 0;
 
-&__check {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: $colorTertiaire;
-    width: 60px;
-   color:$colorWhite; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    
-}
-&__check i {
-    background: white;
-    color: $colorTertiaire;
+    }
 
-    border-radius: 50%;
+    &__item-desc {
+        margin: 0;
+        font-size: 15px;
+        font-weight: 300;
+        padding-top: 5px;
 
-    width: 24px;
-    height: 24px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    &__price {
+        font-weight: bold;                                   /* transition pour le déplacement du prix */
+        margin-left: 10px;
+        margin-top: 25px;
+        transition: margin-right 0.3s ease;
+       
+    }
 
-    font-size: 16px;
-  }
+    &__check {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: $colorTertiaire;
+        width: 60px;
+        color: $colorWhite;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
 
-&__item:hover &__item-content {
-    margin-right: 60px;
-}
-&__item:hover &__check {
-    transform: translateX(0);
-}
-&__button{
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
+    }
+
+    &__check i {
+        background: white;
+        color: $colorTertiaire;
+
+        border-radius: 50%;
+
+        width: 24px;
+        height: 24px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 16px;
+    }
+
+    &__item:hover &__item-content {
+        margin-right: 60px;
+    }
+
+    &__item:hover &__check {
+        transform: translateX(0);
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
 }

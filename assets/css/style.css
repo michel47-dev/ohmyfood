@@ -8,8 +8,8 @@ body {
 .button {
   /***bouton général****/
   font-size: 16px;
-  font-weight: 300;
-  padding: 10px 15px;
+  font-weight: 500;
+  padding: 15px 15px;
   border-radius: 25px;
   text-align: center;
   text-decoration: none;
@@ -29,6 +29,10 @@ body {
 
 .button--large {
   width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
 }
 
 .button--cta:hover {
@@ -74,37 +78,43 @@ body {
   font-size: 14px;
   font-weight: 500;
 }
-.card__like { /**animation du coeur**/
+.card__like {
   position: absolute;
-  right: 50px;
-  bottom: 25px;
-  height: 25px;
+  right: 20px;
+  bottom: 40px;
+  width: 22px;
+  height: 21px;
   cursor: pointer;
 }
-.card__like .card__checkbox {
-  display: none;
-}
-.card__like .card__heart,
-.card__like .card__heart--empty {
+.card .card__heart,
+.card .card__heart--empty {
   position: absolute;
   top: 0;
   left: 0;
 }
-.card__like .card__heart--empty {
-  fill: transparent;
-  stroke: #101010;
+.card {
+  /* coeur vide visible */
 }
-.card__like .card__heart {
-  clip-path: inset(100% 0 0 0); /**masque completement le coeur(cacher en haut) ***/
-  transition: clip-path 0.7s ease; /***animation du coeur qui se remplit progressivement***/
+.card .card__heart--empty {
+  fill: none;
+  stroke: black;
+  stroke-width: 1px;
 }
-.card__like .card__checkbox:checked ~ .card__heart {
-  clip-path: inset(0 0 0 0); /***affiche le coeur rempli en entier***/
-  transition: clip-path 0.7s ease 0.1s; /***animation du coeur qui se remplit progressivement***/
+.card {
+  /* coeur rempli caché */
 }
-.card__like .card__checkbox:checked ~ .card__heart--empty {
-  opacity: 0; /***rend le cœur vide invisible après le clic***/
-  transition: opacity 0.2s ease 0.2s; /***animation de disparition du coeur vide après le clic***/
+.card .card__heart {
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path 0.5s ease;
+}
+.card {
+  /*  HOVER */
+}
+.card .card__like:hover .card__heart {
+  clip-path: inset(0 0 0 0);
+}
+.card .card__like:hover .card__heart--empty {
+  opacity: 0;
 }
 
 .card-link {
@@ -134,7 +144,7 @@ body {
   font-family: "Shrikhand", serif;
   color: #ffffff;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 500;
   margin-top: 20px;
   margin-left: 20px;
   margin-bottom: 0;
@@ -142,11 +152,12 @@ body {
 .footer__list {
   color: #ffffff;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   display: flex;
   flex-direction: column;
   list-style: none;
   padding-left: 20px;
+  margin-bottom: 0;
 }
 .footer__items {
   display: flex;
@@ -157,6 +168,19 @@ body {
 .footer__icon {
   display: flex;
   width: 11px;
+}
+.footer__text {
+  display: flex;
+  flex-direction: column;
+}
+.footer__paragraph {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-top: -20px;
 }
 
 .location {
@@ -205,36 +229,39 @@ body {
 .fonctionnement {
   padding: 40px 25px;
 }
-.fonctionnement__title {
-  margin-bottom: 25px;
-  font-size: 24px;
-  font-weight: 700;
-}
 .fonctionnement__list {
   list-style: none;
   padding: 0;
   margin: 0;
+  counter-reset: step;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 .fonctionnement__item {
   position: relative;
+  counter-increment: step;
   display: flex;
   align-items: center;
   gap: 20px;
   background-color: #f6f6f6;
-  padding: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 12px;
   border-radius: 20px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
-.fonctionnement__number {
+.fonctionnement {
+  /* LE NUMÉRO EN ROND */
+}
+.fonctionnement__item::before {
+  content: counter(step);
   position: absolute;
   left: -10px;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   background: #9356dc;
-  color: #ffffff;
+  color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -242,13 +269,15 @@ body {
   font-size: 14px;
 }
 .fonctionnement__icon {
-  color: #808080;
+  color: grey;
   font-size: 18px;
   margin-left: 20px;
 }
 .fonctionnement__text {
   font-size: 16px;
   font-weight: 500;
+  margin: 0;
+  flex: 1;
 }
 
 .restaurants {
@@ -267,6 +296,11 @@ body {
 }
 
 @media (min-width: 1024px) {
+  .header__back i {
+    left: 0;
+    bottom: 20px;
+    font-size: 24px;
+  }
   .fonctionnement {
     margin: 0 auto;
   }
@@ -279,7 +313,8 @@ body {
     gap: 40px;
   }
   .fonctionnement__item {
-    width: calc((70% - 40px) / 3);
+    width: calc((73% - 40px) / 3);
+    white-space: nowrap;
   }
   .restaurants {
     margin: 0 auto;
@@ -304,7 +339,7 @@ body {
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    gap: 50px;
+    gap: 10px;
     padding: 1px 80px;
     padding-top: 50px;
   }
@@ -316,7 +351,48 @@ body {
     order: 1;
     flex-direction: row;
     gap: 15px;
+    margin-bottom: 12px;
+    margin-right: 20px;
   }
+  .footer__text {
+    order: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-right: 50px;
+  }
+  .menu__title-texte {
+    text-align: center;
+  }
+  .menu__content {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .menu__section {
+    margin: 0 auto;
+    width: 50%;
+  }
+  .menu__button {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__back i {
+  position: absolute;
+  left: 20px;
+  bottom: 15px;
+  font-size: 20px;
+  color: #101010;
+}
+
+.menu {
+  position: relative;
 }
 .menu__img {
   width: 100%;
@@ -324,6 +400,44 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
+}
+.menu__like {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  width: 22px;
+  height: 21px;
+  cursor: pointer;
+}
+.menu .menu__heart,
+.menu .menu__heart--empty {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.menu {
+  /* coeur vide visible */
+}
+.menu .menu__heart--empty {
+  fill: none;
+  stroke: black;
+  stroke-width: 1px;
+}
+.menu {
+  /* coeur rempli caché */
+}
+.menu .menu__heart {
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path 0.5s ease;
+}
+.menu {
+  /*  HOVER */
+}
+.menu .menu__like:hover .menu__heart {
+  clip-path: inset(0 0 0 0);
+}
+.menu .menu__like:hover .menu__heart--empty {
+  opacity: 0;
 }
 .menu__content {
   background: #f6f6f6;
@@ -350,6 +464,7 @@ body {
   display: inline-block;
 }
 .menu__section-title::after {
+  /***ligne sous le titre***/
   content: "";
   position: absolute;
   left: 0;
@@ -363,7 +478,7 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  transition: margin-right 0.3s ease;
+  transition: margin-right 0.3s ease; /* transition pour le déplacement du prix */
   min-width: 0;
 }
 .menu__item {
@@ -403,7 +518,7 @@ body {
   text-overflow: ellipsis;
 }
 .menu__price {
-  font-weight: bold;
+  font-weight: bold; /* transition pour le déplacement du prix */
   margin-left: 10px;
   margin-top: 25px;
   transition: margin-right 0.3s ease;

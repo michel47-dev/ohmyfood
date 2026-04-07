@@ -1,24 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ohmyfood</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet" />
+        rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <header class="header header">
-        <img class="header__logo" src="assets/images/ohmyfood.png" alt="logo-du-site" />
+        <img class="header__logo" src="assets/images/ohmyfood.png" alt="logo-du-site">
     </header>
     <main>
         <section class="location">
@@ -32,28 +32,29 @@
                 Découvrez des restaurants d’exceptions, sélectionner par nos soins.
             </p>
 
-            <button class="button button--cta"><a class="button button--cta__link" href="#restaurants"> Explorer nos
-                    restaurants </a></button>
+            <a class="button button--cta" href="#restaurants">
+                Explorer nos restaurants
+            </a>
         </section>
         <section class="fonctionnement">
             <h2 class="fonctionnement__title">Fonctionnement</h2>
-            <ul class="fonctionnement__list">
+            <ol class="fonctionnement__list">
                 <li class="fonctionnement__item">
-                    <span class="fonctionnement__number">1</span>
+
                     <i class="fonctionnement__icon fa-solid fa-mobile-screen-button"></i>
                     <p class="fonctionnement__text">Choisissez un restaurant</p>
                 </li>
                 <li class="fonctionnement__item">
-                    <span class="fonctionnement__number">2</span>
+
                     <i class="fonctionnement__icon fa-solid fa-list-ul"></i>
                     <p class="fonctionnement__text">Composez votre menu</p>
                 </li>
                 <li class="fonctionnement__item">
-                    <span class="fonctionnement__number">3</span>
+
                     <i class="fonctionnement__icon fa-solid fa-store"></i>
                     <p class="fonctionnement__text">Dégustez au restaurant</p>
                 </li>
-            </ul>
+            </ol>
         </section>
         <section id="restaurants" class="restaurants">
             <h2 class="restaurants__title">Restaurants</h2>
@@ -66,8 +67,8 @@
                         <div class="card__content">
                             <h3 class="card__subtitle">La palette du goût</h3>
                             <p class="card__location">Ménilmontant</p>
-                            <label class="card__like">
-                                <input type="checkbox" class="card__checkbox">
+                            <div class="card__like">
+
                                 <svg class="card__heart--empty" width="22" height="21" viewBox="0 0 22 21" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -78,22 +79,16 @@
                                 <svg class="card__heart" width="22" height="21" viewBox="0 0 22 21" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <defs>
-                                        <linearGradient id="gradient" x1="0%" y1="100%" x2="0%" y2="0%">
+                                        <linearGradient id="gradient2" x1="0%" y1="100%" x2="0%" y2="0%">
                                             <stop offset="0%" stop-color="#9356dc" />
                                             <stop offset="100%" stop-color="#ff79da" />
                                         </linearGradient>
                                     </defs>
-                                    <path fill="url(#gradient)"
+                                    <path fill="url(#gradient2)"
                                         d="M12.2207 2.40527C14.1599 0.222558 17.2057 -0.147219 19.3223 1.62402L19.5244 1.80176C22.0187 4.12419 22.1558 8.32368 19.9121 10.8496L11.5977 20.2148C11.2807 20.5716 10.8021 20.5941 10.4648 20.2822L10.3994 20.2148L2.08496 10.8496C-0.0847856 8.40259 -0.0235333 4.38556 2.25 2.02539L2.47656 1.80176C4.53112 -0.108075 7.5843 0.134683 9.58887 2.19922L9.78027 2.40527L10.627 3.35742L11.001 3.77734L11.374 3.35742L12.2207 2.40527Z">
                                     </path>
                                 </svg>
-
-
-
-
-
-
-                            </label>
+                            </div>
                             <div class="card__etiquette">Nouveau</div>
 
                         </div>
@@ -106,6 +101,28 @@
                         <div class="card__content">
                             <h3 class="card__subtitle">La note enchantée</h3>
                             <p class="card__location"> Charonne</p>
+                            <div class="card__like">
+
+                                <svg class="card__heart--empty" width="22" height="21" viewBox="0 0 22 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.2207 2.40527C14.1599 0.222558 17.2057 -0.147219 19.3223 1.62402L19.5244 1.80176C22.0187 4.12419 22.1558 8.32368 19.9121 10.8496L11.5977 20.2148C11.2807 20.5716 10.8021 20.5941 10.4648 20.2822L10.3994 20.2148L2.08496 10.8496C-0.0847856 8.40259 -0.0235333 4.38556 2.25 2.02539L2.47656 1.80176C4.53112 -0.108075 7.5843 0.134683 9.58887 2.19922L9.78027 2.40527L10.627 3.35742L11.001 3.77734L11.374 3.35742L12.2207 2.40527Z">
+                                    </path>
+
+                                </svg>
+                                <svg class="card__heart" width="22" height="21" viewBox="0 0 22 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="gradient3" x1="0%" y1="100%" x2="0%" y2="0%">
+                                            <stop offset="0%" stop-color="#9356dc" />
+                                            <stop offset="100%" stop-color="#ff79da" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path fill="url(#gradient3)"
+                                        d="M12.2207 2.40527C14.1599 0.222558 17.2057 -0.147219 19.3223 1.62402L19.5244 1.80176C22.0187 4.12419 22.1558 8.32368 19.9121 10.8496L11.5977 20.2148C11.2807 20.5716 10.8021 20.5941 10.4648 20.2822L10.3994 20.2148L2.08496 10.8496C-0.0847856 8.40259 -0.0235333 4.38556 2.25 2.02539L2.47656 1.80176C4.53112 -0.108075 7.5843 0.134683 9.58887 2.19922L9.78027 2.40527L10.627 3.35742L11.001 3.77734L11.374 3.35742L12.2207 2.40527Z">
+                                    </path>
+                                </svg>
+                            </div>
                             <div class="card__etiquette">Nouveau</div>
                         </div>
                     </article>
@@ -115,8 +132,30 @@
                         <img src="assets/images/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="restaurant a la française"
                             class="card__img">
                         <div class=" card__content">
-                            <h3 class="card__subtitle"> la française</h3>
+                            <h3 class="card__subtitle"> La française</h3>
                             <p class="card__location"> Cité Rouge</p>
+                            <div class="card__like">
+
+                                <svg class="card__heart--empty" width="22" height="21" viewBox="0 0 22 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.2207 2.40527C14.1599 0.222558 17.2057 -0.147219 19.3223 1.62402L19.5244 1.80176C22.0187 4.12419 22.1558 8.32368 19.9121 10.8496L11.5977 20.2148C11.2807 20.5716 10.8021 20.5941 10.4648 20.2822L10.3994 20.2148L2.08496 10.8496C-0.0847856 8.40259 -0.0235333 4.38556 2.25 2.02539L2.47656 1.80176C4.53112 -0.108075 7.5843 0.134683 9.58887 2.19922L9.78027 2.40527L10.627 3.35742L11.001 3.77734L11.374 3.35742L12.2207 2.40527Z">
+                                    </path>
+
+                                </svg>
+                                <svg class="card__heart" width="22" height="21" viewBox="0 0 22 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="gradient4" x1="0%" y1="100%" x2="0%" y2="0%">
+                                            <stop offset="0%" stop-color="#9356dc" />
+                                            <stop offset="100%" stop-color="#ff79da" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path fill="url(#gradient4)"
+                                        d="M12.2207 2.40527C14.1599 0.222558 17.2057 -0.147219 19.3223 1.62402L19.5244 1.80176C22.0187 4.12419 22.1558 8.32368 19.9121 10.8496L11.5977 20.2148C11.2807 20.5716 10.8021 20.5941 10.4648 20.2822L10.3994 20.2148L2.08496 10.8496C-0.0847856 8.40259 -0.0235333 4.38556 2.25 2.02539L2.47656 1.80176C4.53112 -0.108075 7.5843 0.134683 9.58887 2.19922L9.78027 2.40527L10.627 3.35742L11.001 3.77734L11.374 3.35742L12.2207 2.40527Z">
+                                    </path>
+                                </svg>
+                            </div>
 
                         </div>
                     </article>
@@ -128,7 +167,28 @@
                         <div class="card__content">
                             <h3 class="card__subtitle">Le délice des sens</h3>
                             <p class="card__location">Folie-Méricourt</p>
+                            <div class="card__like">
 
+                                <svg class="card__heart--empty" width="22" height="21" viewBox="0 0 22 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.2207 2.40527C14.1599 0.222558 17.2057 -0.147219 19.3223 1.62402L19.5244 1.80176C22.0187 4.12419 22.1558 8.32368 19.9121 10.8496L11.5977 20.2148C11.2807 20.5716 10.8021 20.5941 10.4648 20.2822L10.3994 20.2148L2.08496 10.8496C-0.0847856 8.40259 -0.0235333 4.38556 2.25 2.02539L2.47656 1.80176C4.53112 -0.108075 7.5843 0.134683 9.58887 2.19922L9.78027 2.40527L10.627 3.35742L11.001 3.77734L11.374 3.35742L12.2207 2.40527Z">
+                                    </path>
+
+                                </svg>
+                                <svg class="card__heart" width="22" height="21" viewBox="0 0 22 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="gradient5" x1="0%" y1="100%" x2="0%" y2="0%">
+                                            <stop offset="0%" stop-color="#9356dc" />
+                                            <stop offset="100%" stop-color="#ff79da" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path fill="url(#gradient5)"
+                                        d="M12.2207 2.40527C14.1599 0.222558 17.2057 -0.147219 19.3223 1.62402L19.5244 1.80176C22.0187 4.12419 22.1558 8.32368 19.9121 10.8496L11.5977 20.2148C11.2807 20.5716 10.8021 20.5941 10.4648 20.2822L10.3994 20.2148L2.08496 10.8496C-0.0847856 8.40259 -0.0235333 4.38556 2.25 2.02539L2.47656 1.80176C4.53112 -0.108075 7.5843 0.134683 9.58887 2.19922L9.78027 2.40527L10.627 3.35742L11.001 3.77734L11.374 3.35742L12.2207 2.40527Z">
+                                    </path>
+                                </svg>
+                            </div>
                         </div>
                     </article>
                 </a>
@@ -146,13 +206,12 @@
                 <i class="footer__icon fa-solid fa-handshake-angle"></i>
                 Devenir partenaire
             </li>
-            <li class="footer__items">
-                Mentions légales
-            </li>
-            <li class="footer__items">
-                Contact
-            </li>
-        </ul>
+            </ul>
+            <div class="footer__text">
+            <p class="footer__paragraph">Mentions légales</p>
+              <p class="footer__paragraph">contact</p>
+       </div>
+        
 
     </footer>
 </body>

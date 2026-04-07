@@ -1,7 +1,8 @@
+
 .button {
   /***bouton général****/
-  @include font($text-size, $weight-light);
-  padding: 10px 15px;
+  @include font($text-size, $weight-medium);
+  padding: 15px 15px;
   border-radius: 25px;
   text-align: center;
   text-decoration: none;
@@ -23,7 +24,8 @@
 }
 .button--large{
   width: 60%;
-  
+  @include flex-center;
+  height: 50px;
 }
 .button--cta:hover {
   transform: scale(1.01);

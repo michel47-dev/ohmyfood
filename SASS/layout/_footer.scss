@@ -1,4 +1,5 @@
 
+
 .footer {
   @include flex-column;
   background-color: $colorFooter;
@@ -6,7 +7,7 @@
   &__logo {
     font-family: "Shrikhand", serif;
     color: $colorWhite;
-    @include font ($text-large, $weight-bold);
+    @include font ($text-large, $weight-medium);
     margin-top: 20px;
     margin-left: 20px;
     margin-bottom: 0;
@@ -14,10 +15,11 @@
 
   &__list {
     color: $colorWhite;
-    @include font ($text-size, $weight-medium-s);
+    @include font ($text-size, $weight-medium);
    @include flex-column;
     list-style: none;
     padding-left: 20px;
+    margin-bottom: 0;
   }
 
   &__items {
@@ -31,4 +33,16 @@
     display: flex;
     width: 11px;
   }
+&__text {
+    display: flex;
+    flex-direction: column;
+   }
+   &__paragraph {
+    color: $colorWhite;
+    @include font ($text-size, $weight-medium-s);
+    margin: 0;
+      padding-bottom: 5px;
+      padding-left: 20px;
+      padding-top: -20px;
+   }
 }

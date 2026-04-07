@@ -1,3 +1,4 @@
+
 .location {
   /***mon bloc***/
   @include flex-center;
@@ -43,67 +44,72 @@
 
 .fonctionnement {
   padding: 40px 25px;
-
-  &__title {
-    margin-bottom: 25px;
-    @include font($titre-size, $weight-bold);
-  }
-
+ 
   &__list {
-    list-style: none;
+    list-style: none; // enlève les numéros de base
     padding: 0;
     margin: 0;
 
-    @include flex-column;
+    counter-reset: step; // initialise compteur
+
+    display: flex;
+    flex-direction: column;
     gap: 20px;
   }
 
   &__item {
     position: relative;
+    counter-increment: step; // +1 à chaque li
 
     display: flex;
     align-items: center;
     gap: 20px;
-    background-color: $colorGreyBg;
 
-    padding: 10px;
+    background-color: $colorGreyBg;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
     border-radius: 20px;
 
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-
   }
 
-  &__number {
+  /* LE NUMÉRO EN ROND */
+  &__item::before {
+    content: counter(step);
+
     position: absolute;
     left: -10px;
 
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
 
-    background: $colorPrimaire;
-    color: $colorWhite;
+    background:$colorPrimaire;
+    color: white;
 
     border-radius: 50%;
 
     display: flex;
     align-items: center;
-    justify-content: center;          
+    justify-content: center;
 
     font-size: 14px;
   }
 
   &__icon {
-    color: $colorGrey;
+    color: grey;
     font-size: 18px;
     margin-left: 20px;
-
   }
+
+
+  
 
   &__text {
     @include font($text-size, $weight-medium);
+    margin: 0;
+    flex: 1;
   }
-
-
 }
 
 .restaurants {

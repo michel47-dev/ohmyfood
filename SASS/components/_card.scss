@@ -1,3 +1,4 @@
+
 .card {
   background-color: $colorWhite;
   border-radius: 15px;
@@ -41,46 +42,50 @@
    @include font ($text-size-s, $weight-medium);
   }
 
-  &__like {                                      /**animation du coeur**/
+  &__like{
     position: absolute;
-    right: 50px;
-    bottom: 25px;
-    height: 25px;
+    right: 20px;
+    bottom: 40px;
+    width: 22px;
+    height: 21px;
+
     cursor: pointer;
-
-    .card__checkbox {
-      display: none;
-    }
-
-    .card__heart,
-    .card__heart--empty {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    .card__heart--empty {
-      fill: transparent;
-      stroke: $colorBlack;
-    }
-
-    .card__heart {
-      clip-path: inset(100% 0 0 0);                  /**masque completement le coeur(cacher en haut) ***/
-      transition: clip-path 0.7s ease;               /***animation du coeur qui se remplit progressivement***/
-      
-    }
-
-    .card__checkbox:checked~.card__heart {
-      clip-path: inset(0 0 0 0);                 /***affiche le coeur rempli en entier***/
-       transition: clip-path 0.7s ease 0.1s;        /***animation du coeur qui se remplit progressivement***/
-    }
-
-    .card__checkbox:checked~.card__heart--empty {         
-      opacity: 0;                                                     /***rend le cœur vide invisible après le clic***/
-       transition: opacity 0.2s ease 0.2s;                              /***animation de disparition du coeur vide après le clic***/
-    }
-  }
 }
+
+.card__heart,
+.card__heart--empty {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* coeur vide visible */
+.card__heart--empty {
+    fill: none;
+    stroke: black;
+    stroke-width: 1px;
+}
+
+/* coeur rempli caché */
+.card__heart {
+    clip-path: inset(100% 0 0 0);
+    transition: clip-path 0.5s ease;
+}
+
+/*  HOVER */
+.card__like:hover .card__heart {
+    clip-path: inset(0 0 0 0);
+}
+
+.card__like:hover .card__heart--empty {
+    opacity: 0;
+}
+  }
+
+   
+    
+  
+
 .card-link {
   text-decoration: none;
   color: inherit;
