@@ -1,0 +1,29 @@
+/* Animation */
+@keyframes anim-menu {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* état initial */
+.menu__item {
+  opacity: 0;
+  animation: anim-menu 0.6s ease-out forwards;
+}
+
+/* base de timing par section */
+.section--entrees  { --base-delay: 0s; }
+.section--plats    { --base-delay: 1.5s; }
+.section--desserts { --base-delay: 3s; }
+
+
+@for $i from 1 through 10 {          
+  .menu__item:nth-of-type(#{$i}) {                   
+    animation-delay: calc(var(--base-delay) + #{$i * 0.4s});
+  }
+}

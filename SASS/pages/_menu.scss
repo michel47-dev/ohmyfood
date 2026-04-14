@@ -68,10 +68,10 @@
     &__content {
         background: $colorGreyBg;
         border-radius: 40px 40px 0 0;
-        margin-top: -40px;
+        margin-top: -40px;          /* pour faire chevaucher le contenu sur l'image */
         padding: 30px 20px;
-        position: relative;
-        z-index: 1;
+        position: relative;    
+        z-index: 1;       /* pour s'assurer que le contenu est au-dessus de l'image */
     }
 
     &__title-texte {
@@ -91,13 +91,13 @@
     &__section-title {
         @include font ($text-size, $weight-light);
         position: relative;
-        display: inline-block;
+        display: inline-block;          /* nécessaire pour que le ::after soit positionné par rapport à ce titre */
     }
 
 
-    &__section-title::after {
-          /***ligne sous le titre***/
-        content: "";
+    &__section-title::after {                      /***ligne sous le titre***/
+          
+        content: "";                               
         position: absolute;
         left: 0;
         bottom: -7px;
@@ -112,7 +112,7 @@
         align-items: center;
         width: 100%;
         transition: margin-right 0.3s ease;                            /* transition pour le déplacement du prix */
-        min-width: 0;
+        min-width: 0;                  
     }
 
     &__item {
@@ -128,6 +128,7 @@
         margin-top: 5px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         margin-bottom: 12px;
+       
     }
 
     &__item-title {
@@ -151,7 +152,7 @@
         font-weight: 300;
         padding-top: 5px;
 
-        white-space: nowrap;
+        white-space: nowrap;           
         overflow: hidden;
         text-overflow: ellipsis;
     }
@@ -164,7 +165,7 @@
        
     }
 
-    &__check {
+    &__check {    
         position: absolute;
         top: 0;
         right: 0;
@@ -175,12 +176,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
+        transform: translateX(100%);       /* positionné à droite du menu, hors de la vue */
+        transition: transform 0.3s ease;       /* transition pour le déplacement du check */
 
     }
 
-    &__check i {
+    &__check i {      
         background: white;
         color: $colorTertiaire;
 
@@ -196,12 +197,12 @@
         font-size: 16px;
     }
 
-    &__item:hover &__item-content {
+    &__item:hover &__item-content {                  /* au hover sur l'item, on déplace le contenu vers la gauche pour faire apparaître le check */
         margin-right: 60px;
     }
 
     &__item:hover &__check {
-        transform: translateX(0);
+        transform: translateX(0);               /* au hover sur l'item, on fait glisser le check pour le faire apparaître */
     }
 
     &__button {
@@ -211,3 +212,4 @@
     }
 
 }
+

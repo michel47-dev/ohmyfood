@@ -76,7 +76,7 @@
 
   /* LE NUMÉRO EN ROND */
   &__item::before {
-    content: counter(step);
+    content: counter(step);                 /* affiche le numéro du compteur */
 
     position: absolute;
     left: -10px;

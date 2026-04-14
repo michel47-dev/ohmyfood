@@ -42,7 +42,7 @@
    @include font ($text-size-s, $weight-medium);
   }
 
-  &__like{
+  &__like{        /*positionnement du coeur*/
     position: absolute;
     right: 20px;
     bottom: 40px;
@@ -52,8 +52,8 @@
     cursor: pointer;
 }
 
-.card__heart,
-.card__heart--empty {
+.card__heart,       
+.card__heart--empty {       /*positionnement des coeur au même endroit*/
     position: absolute;
     top: 0;
     left: 0;
@@ -73,11 +73,11 @@
 }
 
 /*  HOVER */
-.card__like:hover .card__heart {
+.card__like:hover .card__heart {   /*affichage du coeur rempli au hover*/
     clip-path: inset(0 0 0 0);
 }
 
-.card__like:hover .card__heart--empty {
+.card__like:hover .card__heart--empty {   /*cacher le coeur vide au hover*/
     opacity: 0;
 }
   }

@@ -1,4 +1,75 @@
 @charset "UTF-8";
+/* Animation */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* état initial */
+.menu__item {
+  opacity: 0;
+  animation: fadeInDown 0.6s ease-out forwards;
+}
+
+/* base de timing par section */
+.section--entrees {
+  --base-delay: 0s;
+}
+
+.section--plats {
+  --base-delay: 1.5s;
+}
+
+.section--desserts {
+  --base-delay: 3s;
+}
+
+/* vraie cascade plat par plat */
+.menu__item:nth-of-type(1) {
+  animation-delay: calc(var(--base-delay) + 0.4s);
+}
+
+.menu__item:nth-of-type(2) {
+  animation-delay: calc(var(--base-delay) + 0.8s);
+}
+
+.menu__item:nth-of-type(3) {
+  animation-delay: calc(var(--base-delay) + 1.2s);
+}
+
+.menu__item:nth-of-type(4) {
+  animation-delay: calc(var(--base-delay) + 1.6s);
+}
+
+.menu__item:nth-of-type(5) {
+  animation-delay: calc(var(--base-delay) + 2s);
+}
+
+.menu__item:nth-of-type(6) {
+  animation-delay: calc(var(--base-delay) + 2.4s);
+}
+
+.menu__item:nth-of-type(7) {
+  animation-delay: calc(var(--base-delay) + 2.8s);
+}
+
+.menu__item:nth-of-type(8) {
+  animation-delay: calc(var(--base-delay) + 3.2s);
+}
+
+.menu__item:nth-of-type(9) {
+  animation-delay: calc(var(--base-delay) + 3.6s);
+}
+
+.menu__item:nth-of-type(10) {
+  animation-delay: calc(var(--base-delay) + 4s);
+}
+
 body {
   margin: auto;
   font-family: "Roboto", sans-serif;
@@ -78,7 +149,7 @@ body {
   font-size: 14px;
   font-weight: 500;
 }
-.card__like {
+.card__like { /*positionnement du coeur*/
   position: absolute;
   right: 20px;
   bottom: 40px;
@@ -87,7 +158,7 @@ body {
   cursor: pointer;
 }
 .card .card__heart,
-.card .card__heart--empty {
+.card .card__heart--empty { /*positionnement des coeur au même endroit*/
   position: absolute;
   top: 0;
   left: 0;
@@ -110,10 +181,10 @@ body {
 .card {
   /*  HOVER */
 }
-.card .card__like:hover .card__heart {
+.card .card__like:hover .card__heart { /*affichage du coeur rempli au hover*/
   clip-path: inset(0 0 0 0);
 }
-.card .card__like:hover .card__heart--empty {
+.card .card__like:hover .card__heart--empty { /*cacher le coeur vide au hover*/
   opacity: 0;
 }
 
@@ -255,7 +326,7 @@ body {
   /* LE NUMÉRO EN ROND */
 }
 .fonctionnement__item::before {
-  content: counter(step);
+  content: counter(step); /* affiche le numéro du compteur */
   position: absolute;
   left: -10px;
   width: 24px;
@@ -442,10 +513,10 @@ body {
 .menu__content {
   background: #f6f6f6;
   border-radius: 40px 40px 0 0;
-  margin-top: -40px;
+  margin-top: -40px; /* pour faire chevaucher le contenu sur l'image */
   padding: 30px 20px;
   position: relative;
-  z-index: 1;
+  z-index: 1; /* pour s'assurer que le contenu est au-dessus de l'image */
 }
 .menu__title-texte {
   font-family: "Shrikhand", serif;
@@ -461,10 +532,9 @@ body {
   font-size: 16px;
   font-weight: 300;
   position: relative;
-  display: inline-block;
+  display: inline-block; /* nécessaire pour que le ::after soit positionné par rapport à ce titre */
 }
-.menu__section-title::after {
-  /***ligne sous le titre***/
+.menu__section-title::after { /***ligne sous le titre***/
   content: "";
   position: absolute;
   left: 0;
@@ -534,8 +604,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translateX(100%);
-  transition: transform 0.3s ease;
+  transform: translateX(100%); /* positionné à droite du menu, hors de la vue */
+  transition: transform 0.3s ease; /* transition pour le déplacement du check */
 }
 .menu__check i {
   background: white;
@@ -548,11 +618,11 @@ body {
   justify-content: center;
   font-size: 16px;
 }
-.menu__item:hover .menu__item-content {
+.menu__item:hover .menu__item-content { /* au hover sur l'item, on déplace le contenu vers la gauche pour faire apparaître le check */
   margin-right: 60px;
 }
 .menu__item:hover .menu__check {
-  transform: translateX(0);
+  transform: translateX(0); /* au hover sur l'item, on fait glisser le check pour le faire apparaître */
 }
 .menu__button {
   display: flex;
