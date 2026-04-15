@@ -1,75 +1,4 @@
 @charset "UTF-8";
-/* Animation */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* état initial */
-.menu__item {
-  opacity: 0;
-  animation: fadeInDown 0.6s ease-out forwards;
-}
-
-/* base de timing par section */
-.section--entrees {
-  --base-delay: 0s;
-}
-
-.section--plats {
-  --base-delay: 1.5s;
-}
-
-.section--desserts {
-  --base-delay: 3s;
-}
-
-/* vraie cascade plat par plat */
-.menu__item:nth-of-type(1) {
-  animation-delay: calc(var(--base-delay) + 0.4s);
-}
-
-.menu__item:nth-of-type(2) {
-  animation-delay: calc(var(--base-delay) + 0.8s);
-}
-
-.menu__item:nth-of-type(3) {
-  animation-delay: calc(var(--base-delay) + 1.2s);
-}
-
-.menu__item:nth-of-type(4) {
-  animation-delay: calc(var(--base-delay) + 1.6s);
-}
-
-.menu__item:nth-of-type(5) {
-  animation-delay: calc(var(--base-delay) + 2s);
-}
-
-.menu__item:nth-of-type(6) {
-  animation-delay: calc(var(--base-delay) + 2.4s);
-}
-
-.menu__item:nth-of-type(7) {
-  animation-delay: calc(var(--base-delay) + 2.8s);
-}
-
-.menu__item:nth-of-type(8) {
-  animation-delay: calc(var(--base-delay) + 3.2s);
-}
-
-.menu__item:nth-of-type(9) {
-  animation-delay: calc(var(--base-delay) + 3.6s);
-}
-
-.menu__item:nth-of-type(10) {
-  animation-delay: calc(var(--base-delay) + 4s);
-}
-
 body {
   margin: auto;
   font-family: "Roboto", sans-serif;
@@ -103,7 +32,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
+  height: 20px;
 }
 
 .button--cta:hover {
@@ -444,7 +373,7 @@ body {
     width: 50%;
   }
   .menu__button {
-    width: 50%;
+    width: 20%;
     margin: 0 auto;
   }
 }
@@ -457,9 +386,16 @@ body {
 .header__back i {
   position: absolute;
   left: 20px;
-  bottom: 15px;
+  bottom: 18px;
   font-size: 20px;
   color: #101010;
+}
+.header__logos {
+  /***mon élément***/
+  width: 197px;
+  height: 36px;
+  padding-top: 15px;
+  padding-bottom: 5px;
 }
 
 .menu {
@@ -628,4 +564,119 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 30px;
+}
+
+/* Animation pour les items du menu, avec un délai progressif pour chaque section */
+@keyframes anim-menu {
+  from { /* etat initial */
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  to { /* etat final */
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* état initial */
+.menu__item {
+  opacity: 0;
+  animation: anim-menu 0.8s ease-out forwards;
+}
+
+/* base de timing par section */
+.section--entrees {
+  --base-delay: 0s;
+}
+
+.section--plats {
+  --base-delay: 1.4s;
+}
+
+.section--desserts {
+  --base-delay: 2.8s;
+}
+
+.menu__item:nth-of-type(1) {
+  animation-delay: calc(var(--base-delay) + 0.4s);
+}
+
+.menu__item:nth-of-type(2) {
+  animation-delay: calc(var(--base-delay) + 0.8s);
+}
+
+.menu__item:nth-of-type(3) {
+  animation-delay: calc(var(--base-delay) + 1.2s);
+}
+
+.menu__item:nth-of-type(4) {
+  animation-delay: calc(var(--base-delay) + 1.6s);
+}
+
+.menu__item:nth-of-type(5) {
+  animation-delay: calc(var(--base-delay) + 2s);
+}
+
+.menu__item:nth-of-type(6) {
+  animation-delay: calc(var(--base-delay) + 2.4s);
+}
+
+.menu__item:nth-of-type(7) {
+  animation-delay: calc(var(--base-delay) + 2.8s);
+}
+
+.menu__item:nth-of-type(8) {
+  animation-delay: calc(var(--base-delay) + 3.2s);
+}
+
+.menu__item:nth-of-type(9) {
+  animation-delay: calc(var(--base-delay) + 3.6s);
+}
+
+.menu__item:nth-of-type(10) {
+  animation-delay: calc(var(--base-delay) + 4s);
+}
+
+/* Animation pour le loader d'accueil */
+.loader {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  animation: anim-accueil 1s ease forwards;
+}
+.loader__spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #eaeaea;
+  border-top: 6px solid #9356dc;
+  border-right: 6px solid #ff79da;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+.loader__text {
+  font-family: "Shrikhand", serif;
+  font-size: 2rem;
+  color: #9356dc;
+}
+
+/* rotation spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* disparition loader */
+@keyframes anim-accueil {
+  0%, 85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -1,29 +1,82 @@
-/* Animation */
+/* Animation pour les items du menu, avec un délai progressif pour chaque section */
 @keyframes anim-menu {
-  from {
+  from {           /* etat initial */
     opacity: 0;
     transform: translateY(-25px);
   }
-  to {
+  to {             /* etat final */
     opacity: 1;
     transform: translateY(0);
   }
 }
 
 /* état initial */
-.menu__item {
+.menu__item {   
   opacity: 0;
-  animation: anim-menu 0.6s ease-out forwards;
+  animation: anim-menu 0.8s ease-out forwards;
 }
 
 /* base de timing par section */
 .section--entrees  { --base-delay: 0s; }
-.section--plats    { --base-delay: 1.5s; }
-.section--desserts { --base-delay: 3s; }
+.section--plats    { --base-delay: 1.4s; }
+.section--desserts { --base-delay: 2.8s; }
 
 
 @for $i from 1 through 10 {          
   .menu__item:nth-of-type(#{$i}) {                   
     animation-delay: calc(var(--base-delay) + #{$i * 0.4s});
+  }
+}
+
+/* Animation pour le loader d'accueil */
+
+.loader {
+  position: fixed;      
+  inset: 0;
+  background:$colorWhite;
+  z-index: 9999;
+
+ @include flex-column-center;
+  justify-content: center;
+  
+  gap: 20px;
+
+  animation: anim-accueil 1s ease forwards;
+
+
+&__spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid $colorGreyLight;
+  border-top: 6px solid $colorPrimaire;
+  border-right: 6px solid $colorSecondaire;
+  border-radius: 50%;
+
+  animation: spin 1s linear infinite;
+}
+
+&__text {
+  font-family: "Shrikhand", serif;
+  font-size: 2rem;
+  color: $colorPrimaire;
+}
+}
+/* rotation spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* disparition loader */
+@keyframes anim-accueil {
+  0%, 85% {
+    opacity: 1;
+    
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
   }
 }

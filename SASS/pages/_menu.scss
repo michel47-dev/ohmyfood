@@ -6,11 +6,18 @@
     &__back i {
         position: absolute;
         left: 20px;
-        bottom: 15px;
+        bottom: 18px;
         font-size: 20px;
         color: $colorBlack;
        
     }
+    &__logos {
+    /***mon élément***/
+    width: 197px;
+    height: 36px;
+    padding-top: 15px;
+   padding-bottom: 5px;
+  }
 }
 
 .menu {

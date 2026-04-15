@@ -25,7 +25,7 @@
 .button--large{
   width: 60%;
   @include flex-center;
-  height: 50px;
+  height: 20px;
 }
 .button--cta:hover {
   transform: scale(1.01);
