@@ -178,9 +178,17 @@ body {
   font-size: 16px;
   font-weight: 400;
   margin: 0;
+  text-decoration: none;
   padding-bottom: 5px;
   padding-left: 20px;
   padding-top: -20px;
+}
+.footer__link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  color: #ffffff;
 }
 
 .location {
@@ -568,11 +576,13 @@ body {
 
 /* Animation pour les items du menu, avec un délai progressif pour chaque section */
 @keyframes anim-menu {
-  from { /* etat initial */
+  from {
+    /* etat initial */
     opacity: 0;
     transform: translateY(-25px);
   }
-  to { /* etat final */
+  to {
+    /* etat final */
     opacity: 1;
     transform: translateY(0);
   }
@@ -588,6 +598,7 @@ body {
   --base-delay: 0s;
 }
 
+/*variable CSS pour le délai de base de chaque section */
 .section--plats {
   --base-delay: 1.4s;
 }
@@ -598,42 +609,52 @@ body {
 
 .menu__item:nth-of-type(1) {
   animation-delay: calc(var(--base-delay) + 0.4s);
+  /* délai progressif pour chaque item */
 }
 
 .menu__item:nth-of-type(2) {
   animation-delay: calc(var(--base-delay) + 0.8s);
+  /* délai progressif pour chaque item */
 }
 
 .menu__item:nth-of-type(3) {
   animation-delay: calc(var(--base-delay) + 1.2s);
+  /* délai progressif pour chaque item */
 }
 
 .menu__item:nth-of-type(4) {
   animation-delay: calc(var(--base-delay) + 1.6s);
+  /* délai progressif pour chaque item */
 }
 
 .menu__item:nth-of-type(5) {
   animation-delay: calc(var(--base-delay) + 2s);
+  /* délai progressif pour chaque item */
 }
 
 .menu__item:nth-of-type(6) {
   animation-delay: calc(var(--base-delay) + 2.4s);
+  /* délai progressif pour chaque item */
 }
 
 .menu__item:nth-of-type(7) {
   animation-delay: calc(var(--base-delay) + 2.8s);
+  /* délai progressif pour chaque item */
 }
 
 .menu__item:nth-of-type(8) {
   animation-delay: calc(var(--base-delay) + 3.2s);
+  /* délai progressif pour chaque item */
 }
 
 .menu__item:nth-of-type(9) {
   animation-delay: calc(var(--base-delay) + 3.6s);
+  /* délai progressif pour chaque item */
 }
 
 .menu__item:nth-of-type(10) {
   animation-delay: calc(var(--base-delay) + 4s);
+  /* délai progressif pour chaque item */
 }
 
 /* Animation pour le loader d'accueil */
@@ -647,7 +668,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 20px;
-  animation: anim-accueil 1s ease forwards;
+  animation: anim-accueil 3s ease forwards;
 }
 .loader__spinner {
   width: 60px;
@@ -679,4 +700,20 @@ body {
     opacity: 0;
     display: none;
   }
+}
+.fonctionnement__item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.fonctionnement__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  background-color: #f6f6f6;
+}
+
+.card {
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }/*# sourceMappingURL=style.css.map */

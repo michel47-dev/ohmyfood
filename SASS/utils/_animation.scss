@@ -1,66 +1,81 @@
 /* Animation pour les items du menu, avec un délai progressif pour chaque section */
 @keyframes anim-menu {
-  from {           /* etat initial */
+  from {
+    /* etat initial */
     opacity: 0;
     transform: translateY(-25px);
   }
-  to {             /* etat final */
+
+  to {
+    /* etat final */
     opacity: 1;
     transform: translateY(0);
   }
 }
 
 /* état initial */
-.menu__item {   
+.menu__item {
   opacity: 0;
   animation: anim-menu 0.8s ease-out forwards;
 }
 
 /* base de timing par section */
-.section--entrees  { --base-delay: 0s; }
-.section--plats    { --base-delay: 1.4s; }
-.section--desserts { --base-delay: 2.8s; }
+.section--entrees {
+  --base-delay: 0s;
+}
+
+/*variable CSS pour le délai de base de chaque section */
+.section--plats {
+  --base-delay: 1.4s;
+}
+
+.section--desserts {
+  --base-delay: 2.8s;
+}
 
 
-@for $i from 1 through 10 {          
-  .menu__item:nth-of-type(#{$i}) {                   
+@for $i from 1 through 10 {
+  .menu__item:nth-of-type(#{$i}) {
     animation-delay: calc(var(--base-delay) + #{$i * 0.4s});
+    /* délai progressif pour chaque item */
   }
 }
 
 /* Animation pour le loader d'accueil */
 
 .loader {
-  position: fixed;      
+  position: fixed;
   inset: 0;
-  background:$colorWhite;
+  background: $colorWhite;
   z-index: 9999;
 
- @include flex-column-center;
+  @include flex-column-center;
   justify-content: center;
-  
+
   gap: 20px;
 
-  animation: anim-accueil 1s ease forwards;
+  animation: anim-accueil 3s ease forwards;
 
 
-&__spinner {
-  width: 60px;
-  height: 60px;
-  border: 6px solid $colorGreyLight;
-  border-top: 6px solid $colorPrimaire;
-  border-right: 6px solid $colorSecondaire;
-  border-radius: 50%;
+  &__spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid $colorGreyLight;
+    border-top: 6px solid $colorPrimaire;
+    border-right: 6px solid $colorSecondaire;
+    border-radius: 50%;
 
-  animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+  }
+
+  &__text {
+    font-family: "Shrikhand", serif;
+    font-size: 2rem;
+    color: $colorPrimaire;
+
+  }
 }
 
-&__text {
-  font-family: "Shrikhand", serif;
-  font-size: 2rem;
-  color: $colorPrimaire;
-}
-}
 /* rotation spinner */
 @keyframes spin {
   to {
@@ -70,13 +85,39 @@
 
 /* disparition loader */
 @keyframes anim-accueil {
-  0%, 85% {
+
+  0%,
+  85% {
     opacity: 1;
-    
+
   }
 
   100% {
     opacity: 0;
     display: none;
   }
+}
+
+.fonctionnement__item {
+  transition: transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    background-color: $colorGreyBg;
+  }
+
+
+}
+.card{
+   transition: transform 0.1s ease,
+    box-shadow 0.1s ease;
+    
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    
+}
 }
