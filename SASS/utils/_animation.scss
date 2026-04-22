@@ -19,12 +19,12 @@
   animation: anim-menu 0.8s ease-out forwards;
 }
 
-/* base de timing par section */
+/*variable CSS pour le délai de base de chaque section */
 .section--entrees {
   --base-delay: 0s;
 }
 
-/*variable CSS pour le délai de base de chaque section */
+
 .section--plats {
   --base-delay: 1.4s;
 }
